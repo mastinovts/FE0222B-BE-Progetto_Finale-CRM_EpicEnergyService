@@ -10,7 +10,7 @@ import io.swagger.v3.oas.annotations.security.SecurityScheme;
 
 @Configuration
 @SecurityScheme(name = "bearerAuth", type = SecuritySchemeType.HTTP, bearerFormat = "JWT", scheme = "bearer")
-@OpenAPIDefinition(info = @Info(title = "Epic Energy Service API", version = "v1", description = "Epic Energy Service Rest "))
+@OpenAPIDefinition(info = @Info(title = "Epic Energy Service API", version = "v1", description = "Epic Energy Service Rest"))
 public class SwaggerConfig {
 
 }

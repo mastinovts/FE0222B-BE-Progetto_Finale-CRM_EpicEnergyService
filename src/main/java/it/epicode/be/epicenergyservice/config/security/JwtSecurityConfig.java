@@ -23,8 +23,6 @@ import it.epicode.be.epicenergyservice.util.security.AuthTokenFilter;
 @Order(1)
 public class JwtSecurityConfig extends WebSecurityConfigurerAdapter {
 
-
-
 	@Autowired
 	UserDetailsServiceImpl userDetailsService;
 

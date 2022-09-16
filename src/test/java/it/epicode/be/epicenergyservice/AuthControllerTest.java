@@ -1,26 +1,17 @@
 package it.epicode.be.epicenergyservice;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import org.json.JSONObject;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithAnonymousUser;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-
-//import it.epicode.be.epicenergyservice.model.StatoFattura;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -67,33 +58,5 @@ public class AuthControllerTest {
 	public void deleteStatoWhenUtenteMockIsAuthenticatedByUser() throws Exception {
 		this.mockMvc.perform(delete("/api/deletestato/3")).andExpect(status().isOk());
 	}
-
-//	@Test
-//	@WithMockUser(username = "admin", password = "admin", roles = "ADMIN")
-//	public void addStatoFattura() throws Exception {
-//		ObjectMapper objectMapper = new ObjectMapper();
-//		String json = objectMapper.writeValueAsString(statoFattura);
-//		MvcResult result = mockMvc
-//				.perform(post("/api/statofattura").contentType(MediaType.APPLICATION_JSON).content(json))
-//				.andExpect(status().isOk()).andReturn();
-//
-//		JSONObject json_obj = new JSONObject(result.getResponse().getContentAsString());
-//		assertTrue(json_obj.has("tipoFattura"));
-//		
-//
-//		
-//		assertTrue(json_obj.getString("tipoFattura").contains("PAGATA"));
-//	}
-
-//	@BeforeEach
-//	public void initContext() {
-//
-//		statoFattura = new StatoFattura();
-//		statoFattura.setTipoStato(null);
-//
-//	}
-	
-	
-
-	
+		
 }

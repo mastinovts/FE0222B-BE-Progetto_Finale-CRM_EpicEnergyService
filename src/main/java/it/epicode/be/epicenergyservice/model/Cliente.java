@@ -47,7 +47,7 @@ public class Cliente {
 	@NotNull(message = "Specificare la la data dell'ultimo contatto")
 	private LocalDate dataUltimoContatto;
 	@NotNull(message = "Specificare il fatturato annuale")
-	private int fatturatoAnnuale;
+	private double fatturatoAnnuale;
 	@NotEmpty(message = "Specificare la pec")
 	private String pec;
 	@NotEmpty(message = "Specificare il numero di telefono")

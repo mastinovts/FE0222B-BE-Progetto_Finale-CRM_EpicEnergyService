@@ -48,10 +48,6 @@ public class IndirizzoControllerWeb {
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	public String aggiungiIndirizzo(Indirizzo indirizzo, BindingResult result, Model model) {
 //		log.info("aggiungi indirizzo");
-//		if(result.hasErrors()) {
-//			model.addAttribute("listaComuni", comuneService.findAll(pageable));
-//			return "formIndirizzo";
-//		}
 		indirizzoService.saveIndirizzo(indirizzo);
 		
 		return "redirect:/indirizzi/mostraelenco";
@@ -60,7 +56,7 @@ public class IndirizzoControllerWeb {
 	@GetMapping("/mostraformaggiorna/{id}")
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	public ModelAndView mostraFormAggiorna(@PathVariable Long id, Model model) {
-//		log.info("Test mostra form aggiorna indirizzo");
+//		log.info("Test per il form aggiorna indirizzo");
 		Optional <Indirizzo> indirizzo = indirizzoService.findById(id);
 		if(indirizzo.isPresent()) {
 			ModelAndView view = new ModelAndView("aggiornaIndirizzo");
